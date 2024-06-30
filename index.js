@@ -16,7 +16,7 @@ const razorpay = require("razorpay")
 dotenv.config();
 
 
-app.use(cors({ origin: "https://shop-easy-com.web.app/" , credentials: true }));
+
 
 app.use(express.json());
 
@@ -34,7 +34,12 @@ app.use("/api/order",orderRouter)
 
 app.use(errormiddleware)
 
+const corsOptions = {
+  origin: 'https://shop-easy-com.web.app', // Update to match your client URL
+  optionsSuccessStatus: 200,
+};
 
+app.use(cors(corsOptions));
 
 app.get("/api/getKey", (req, res)=>
 res.status(201).json({key: process.env.RAZORPAY_API_KEY}))
