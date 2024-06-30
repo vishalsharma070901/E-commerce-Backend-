@@ -21,6 +21,9 @@ dotenv.config();
 // };
 
 // app.use(cors(corsOptions)); // Apply CORS middleware before routes
+app.use(cors({
+  origin: 'https://shop-easy-com.web.app'
+}));
 
 app.use(express.json());
 
