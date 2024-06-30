@@ -16,7 +16,7 @@ const razorpay = require("razorpay")
 dotenv.config();
 
 
-app.use(cors({ origin: "http://localhost:5173" , credentials: true }));
+app.use(cors({ origin: "https://shop-easy-com.web.app/" , credentials: true }));
 
 app.use(express.json());
 
